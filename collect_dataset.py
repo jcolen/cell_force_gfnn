@@ -12,10 +12,8 @@ from tqdm import tqdm
 data_dir='/project/vitelli/cell_stress/ForcePrediction_All_16kpa_new/AM_all_fixed_NormedF_dataset2/testsplit_0'
 cells=['10_cell_3', '08_cell_1', '08_cell_2', '11_cell_1']
 
-more_cells = cells + ['10_cell_1', '10_cell_2', '10_cell_4', '08_cell_3', '08_cell_4', '11_cell_4']
 
-#with h5py.File('data/cell_dataset.h5', 'w') as h5f:
-with h5py.File('data/more_cell_dataset.h5', 'w') as h5f:
+with h5py.File('data/cell_dataset.h5', 'w') as h5f:
     dataframe = pd.DataFrame()
 
     for cell in more_cells:
@@ -50,4 +48,4 @@ with h5py.File('data/more_cell_dataset.h5', 'w') as h5f:
         
         dataframe = dataframe.append(di).reset_index(drop=True)
                          
-dataframe.to_csv('data/more_cell_dataset.csv', index=False)
+dataframe.to_csv('data/cell_dataset.csv', index=False)
